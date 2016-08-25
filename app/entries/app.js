@@ -9,7 +9,6 @@ import { Router, Route, IndexRoute, hashHistory, IndexLink, Link } from 'react-r
 import BrowsePage from './browse/browsePage.js';
 
 (function () {
-	'use strict';
 	
 	var App = React.createClass({
 
