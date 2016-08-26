@@ -1,7 +1,5 @@
-
 import sharedStyles from "./shared/shared.css";
 
-{/*import $ from 'jquery';*/}
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory, IndexLink, Link } from 'react-router'

@@ -1,0 +1,27 @@
+@value colors: "../shared/colors.css";
+@value rqGolden, rqWhite from colors;
+
+.browseContainer {
+	width: 100%;
+	text-align: center;
+}
+
+.browseTable {
+	margin: 0 auto;
+}
+
+.footer {
+	width: 100%;
+	text-align: center;
+}
+
+.loadButton {
+	composes: linkColor from "../shared/shared.css";
+	width: 150px;
+	height: 30px;
+	font-size: 12px;
+	border: 1px solid rqGolden;
+	border-radius: 15px;
+	background-color: rqWhite;
+	cursor: pointer;
+}

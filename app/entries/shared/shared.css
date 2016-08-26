@@ -1,26 +1,33 @@
+@value colors: "./colors.css";
+@value rqGolden, rqWhitesmoke, rqLightgray, rqWhite from colors;
+
 :global(body) {
 	margin: 0px;
-	background-color: whitesmoke;
+	background-color: rqWhitesmoke;
+	font-family: Helvetica;
 }
 
 .content {
 	width: 100%;
 }
 
+.linkColor {
+	color: rqGolden;
+}
+
 .header {
-	background-color: white;
+	background-color: rqWhite;
 	padding: 10px;
-	border-bottom: 1px solid lightgray;
+	border-bottom: 1px solid rqLightgray;
 	color: black;
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 24px;
 	width: 100%;
 	text-align: center;
-	font-family: Helvetica;
 }
 
 .leftHeaderLink {
-	color: orange;
+	composes: linkColor;
 	font-size: 16px;
 	font-weight: normal;
 	text-decoration: none;
