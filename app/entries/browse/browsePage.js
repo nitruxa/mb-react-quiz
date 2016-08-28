@@ -17,6 +17,20 @@ var BrowseItem = React.createClass({
 	}
 });
 
+var BrowseTableRow = React.createClass ({
+	
+	render: function () {
+		
+		return (
+			<tr>
+				<td>
+					<BrowseItem item={this.props.item} />
+				</td>
+			</tr>
+		);
+	}
+});
+
 var BrowseTable = React.createClass({
 
 	render: function () {
@@ -33,17 +47,17 @@ var BrowseTable = React.createClass({
 		*/}
 		
 		var rows = [];
+		var inRow = 3;
 		
-		this.props.data.items.forEach(function(item) {
-			
-			rows.push(
-				<tr key={item.id + "|tr"}>
-					<td key={item.id + "|td"}>
-						<BrowseItem key={item.id} item={item} />
-					</td>
-				</tr>
-			);
+		this.props.data.items.forEach(function(item, inx) {
+			//if ((inx % inRow) === 0) {
 				
+				
+			
+				rows.push(
+					<BrowseTableRow key={item.id + "|tr"} item={item} />
+				);
+			//}
 		});
 		
 		return (

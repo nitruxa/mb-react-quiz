@@ -14,9 +14,7 @@ import BrowsePage from './browse/browsePage.js';
 			
 			return (
 				<div className={sharedStyles.content}>
-		
-					<BrowsePage />
-								
+					{this.props.children}			
 				</div>
 			);
 		}
@@ -25,7 +23,7 @@ import BrowsePage from './browse/browsePage.js';
 	ReactDOM.render(
 		<Router history={hashHistory}>	
 			<Route path="/" component={App}>
-			
+				<IndexRoute component={BrowsePage}/>
 			</Route>
 		</Router>,
 		document.getElementById('root')
