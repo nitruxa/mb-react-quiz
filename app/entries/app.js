@@ -2,8 +2,10 @@ import sharedStyles from "./css/shared.css";
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import thunkMiddleware from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import { Provider } from 'react-redux'
+
 import { fetchData } from './actions/appActions.js'
 import app from './reducers/appReducers.js'
 
@@ -38,14 +40,6 @@ import BrowsePage from './components/browsePage.js';
 	);
 	*/}
 	
-	
-
-	ReactDOM.render(
-			<App />,
-			document.getElementById('root')
-		);
-	
-	
 	const store = createStore(
 			  app,
 			  applyMiddleware(
@@ -60,6 +54,10 @@ import BrowsePage from './components/browsePage.js';
 	)
 	
 	
+	ReactDOM.render(
+			<App />,
+			document.getElementById('root')
+		);
 	
 	
 	
