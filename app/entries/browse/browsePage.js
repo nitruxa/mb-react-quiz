@@ -8,10 +8,9 @@ import Header from '../shared/header.js';
 var BrowseItem = React.createClass({
 
 	render: function () {
-		
 		return (
 			<div>
-				{this.props.item.title}
+				<img src={this.props.item.image} />
 			</div>
 		);
 	}
@@ -20,12 +19,18 @@ var BrowseItem = React.createClass({
 var BrowseTableRow = React.createClass ({
 	
 	render: function () {
+		var cells = [];
+		this.props.items.forEach(function(item, inx) {
+			cells.push(
+				<td key={item.id + "|cell"} className={browseStyles.itemCell}>
+					<BrowseItem key={item.id + "|item"} item={item} />
+				</td>
+			);
+		});
 		
 		return (
 			<tr>
-				<td>
-					<BrowseItem item={this.props.item} />
-				</td>
+				{cells}
 			</tr>
 		);
 	}
@@ -34,31 +39,21 @@ var BrowseTableRow = React.createClass ({
 var BrowseTable = React.createClass({
 
 	render: function () {
-		{/*
-		var rows = this.props.data.items.map(function(item) {
-				return (
-					<tr>
-						<td>
-							{item.title}
-						</td>
-					</tr>
-				)
-		});
-		*/}
-		
 		var rows = [];
-		var inRow = 3;
+		var cellsInRow = 3;
 		
-		this.props.data.items.forEach(function(item, inx) {
-			//if ((inx % inRow) === 0) {
-				
-				
+		var allItems = this.props.data.items;
+		var i, crowCnt = 1, lng = allItems.length;
+		
+		for (i = 0; i < lng; i += cellsInRow) {
+			var rowItems = allItems.slice(i, i + cellsInRow);
 			
-				rows.push(
-					<BrowseTableRow key={item.id + "|tr"} item={item} />
-				);
-			//}
-		});
+			rows.push(
+				<BrowseTableRow key={crowCnt + "|tr"} items={rowItems} />
+			);
+			
+			crowCnt++;
+		}
 		
 		return (
 			<table className={browseStyles.browseTable}>
@@ -96,7 +91,6 @@ var BrowseContainer = React.createClass({
 	},
 
 	render: function () {
-		
 		return (
 			<div className={browseStyles.browseContainer}>
 				<BrowseTable data={this.state.data} />
@@ -108,7 +102,6 @@ var BrowseContainer = React.createClass({
 var LoadButton = React.createClass({
 
 	render: function () {
-		
 		return (
 			<div className={browseStyles.footer}>
 				<input type="button" className={browseStyles.loadButton} value="LOAD MORE" />
@@ -121,7 +114,6 @@ var LoadButton = React.createClass({
 var BrowsePage = React.createClass({
 
 	render: function () {
-		
 		return (
 			<div>
 				<Header title="Browse page" />

@@ -1,5 +1,5 @@
 @value colors: "../shared/colors.css";
-@value rqGolden, rqWhite from colors;
+@value rqGolden, rqWhite, rqLightgray from colors;
 
 .browseContainer {
 	width: 100%;
@@ -7,7 +7,15 @@
 }
 
 .browseTable {
-	margin: 0 auto;
+	margin: 0px auto;
+	border-spacing: 15px;
+}
+
+.itemCell {
+	width: 300px;
+	height: 300px;
+	border: 1px solid rqLightgray;
+	background-color: rqWhite;	
 }
 
 .footer {
