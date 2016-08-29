@@ -1,4 +1,4 @@
-@value colors: "../shared/colors.css";
+@value colors: "./colors.css";
 @value rqGolden, rqWhite, rqLightgray from colors;
 
 .browseContainer {
@@ -21,10 +21,11 @@
 .footer {
 	width: 100%;
 	text-align: center;
+	margin-bottom: 15px;
 }
 
 .loadButton {
-	composes: linkColor from "../shared/shared.css";
+	composes: linkColor from "./shared.css";
 	width: 150px;
 	height: 30px;
 	font-size: 12px;

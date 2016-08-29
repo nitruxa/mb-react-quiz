@@ -1,10 +1,17 @@
-import sharedStyles from "./shared/shared.css";
+import sharedStyles from "./css/shared.css";
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, hashHistory, IndexLink, Link } from 'react-router'
+import thunkMiddleware from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+import { fetchData } from './actions/appActions.js'
+import app from './reducers/appReducers.js'
 
-import BrowsePage from './browse/browsePage.js';
+{/*
+import { Router, Route, IndexRoute, hashHistory, IndexLink, Link } from 'react-router'
+*/}
+
+import BrowsePage from './components/browsePage.js';
 
 (function () {
 	
@@ -14,12 +21,13 @@ import BrowsePage from './browse/browsePage.js';
 			
 			return (
 				<div className={sharedStyles.content}>
-					{this.props.children}			
+					{/*{this.props.children}*/}
+					<BrowsePage />
 				</div>
 			);
 		}
 	});
-	
+	{/*
 	ReactDOM.render(
 		<Router history={hashHistory}>	
 			<Route path="/" component={App}>
@@ -28,5 +36,31 @@ import BrowsePage from './browse/browsePage.js';
 		</Router>,
 		document.getElementById('root')
 	);
+	*/}
+	
+	
+
+	ReactDOM.render(
+			<App />,
+			document.getElementById('root')
+		);
+	
+	
+	const store = createStore(
+			  app,
+			  applyMiddleware(
+			    thunkMiddleware
+			  )
+			)
+			
+	console.log(store.getState())
+	
+	store.dispatch(fetchData(9)).then(() =>
+	  console.log(store.getState())
+	)
+	
+	
+	
+	
 	
 })();

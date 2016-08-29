@@ -1,20 +1,12 @@
-import browseStyles from "./browse.css";
+import browseStyles from "../css/browse.css";
 
-import $ from 'jquery';
 import React from 'react';
 
-import Header from '../shared/header.js';
+import Header from './header.js';
+import BrowseItem from './browseItem.js';
+import LoadButton from './loadButton.js';
 
-var BrowseItem = React.createClass({
 
-	render: function () {
-		return (
-			<div>
-				<img src={this.props.item.image} />
-			</div>
-		);
-	}
-});
 
 var BrowseTableRow = React.createClass ({
 	
@@ -66,50 +58,17 @@ var BrowseTable = React.createClass({
 });
 
 var BrowseContainer = React.createClass({
-	
-	loadData: function () {
-		$.ajax({
-			url: this.props.url,
-			dataType: 'json',
-			success: function (data) {
-				this.setState({data: data});
-				
-				console.log(this.state.data);
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(this.props.url, status, err.toString());
-			}.bind(this)
-		});
-	},
-
-	getInitialState: function() {
-		return {data: {items: []}};
-	},
-	
-	componentDidMount: function () {
-		this.loadData();
-	},
-
 	render: function () {
+		
+		var data = {items: []};
+		
 		return (
 			<div className={browseStyles.browseContainer}>
-				<BrowseTable data={this.state.data} />
+				<BrowseTable data={data} />
 			</div>
 		);
 	}
 });
-
-var LoadButton = React.createClass({
-
-	render: function () {
-		return (
-			<div className={browseStyles.footer}>
-				<input type="button" className={browseStyles.loadButton} value="LOAD MORE" />
-			</div>
-		);
-	}
-});
-
 
 var BrowsePage = React.createClass({
 
@@ -117,7 +76,7 @@ var BrowsePage = React.createClass({
 		return (
 			<div>
 				<Header title="Browse page" />
-				<BrowseContainer url={'/browse/data?start=0&limit=9'} />
+				<BrowseContainer />
 				<LoadButton />
 			</div>
 		);
