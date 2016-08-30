@@ -6,8 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux'
 
-import { fetchData } from './actions/appActions.js'
-import app from './reducers/appReducers.js'
+import actions from './actions'
+import reducer from './reducers'
 
 {/*
 import { Router, Route, IndexRoute, hashHistory, IndexLink, Link } from 'react-router'
@@ -41,15 +41,15 @@ import BrowsePage from './components/browsePage.js';
 	*/}
 	
 	const store = createStore(
-			  app,
+				reducer,
 			  applyMiddleware(
 			    thunkMiddleware
 			  )
 			)
 			
 	console.log(store.getState())
-	
-	store.dispatch(fetchData(9)).then(() =>
+		
+	store.dispatch(actions.itemList.fetchData(9)).then(() =>
 	  console.log(store.getState())
 	)
 	

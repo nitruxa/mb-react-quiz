@@ -1,7 +1,5 @@
 import { combineReducers } from 'redux';
-import {
-  REQUEST_DATA, RECEIVE_DATA
-} from '../actions/appActions.js';
+import { REQUEST_DATA, RECEIVE_DATA } from '../constants';
 
 function data (state = {
 	isFetching: false,
@@ -22,10 +20,10 @@ function data (state = {
 	}
 }
 
-const app = combineReducers({
+const reducer = combineReducers({
 	data
 })
 
-export default app
+export default reducer
 
 
