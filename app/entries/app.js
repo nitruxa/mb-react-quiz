@@ -1,64 +1,26 @@
-import sharedStyles from "./css/shared.css";
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { Provider } from 'react-redux'
+import createLogger from 'redux-logger';
 
-import actions from './actions'
-import reducer from './reducers'
+import { ADD_ITEMS } from './constants';
+import reducer from './reducers';
+import Root from './containers/root.js';
 
-{/*
-import { Router, Route, IndexRoute, hashHistory, IndexLink, Link } from 'react-router'
-*/}
-
-import BrowsePage from './components/browsePage.js';
+import actions from './actions';
 
 (function () {
 	
-	var App = React.createClass({
-
-		render: function () {
-			
-			return (
-				<div className={sharedStyles.content}>
-					{/*{this.props.children}*/}
-					<BrowsePage />
-				</div>
-			);
-		}
-	});
-	{/*
-	ReactDOM.render(
-		<Router history={hashHistory}>	
-			<Route path="/" component={App}>
-				<IndexRoute component={BrowsePage}/>
-			</Route>
-		</Router>,
-		document.getElementById('root')
-	);
-	*/}
+	const loggerMiddleware = createLogger();
 	
-	const store = createStore(
-				reducer,
-			  applyMiddleware(
-			    thunkMiddleware
-			  )
-			)
-			
-	console.log(store.getState())
-		
-	store.dispatch(actions.itemList.fetchData(9)).then(() =>
-	  console.log(store.getState())
-	)
-	
+	const store = createStore(reducer, applyMiddleware( thunkMiddleware, loggerMiddleware ));
 	
 	ReactDOM.render(
-			<App />,
+			<Root store={store} />,
 			document.getElementById('root')
-		);
+	);
 	
-	
+	store.dispatch(actions.itemList.fetchData(ADD_ITEMS));
 	
 })();

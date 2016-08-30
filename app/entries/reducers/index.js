@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
-import { REQUEST_DATA, RECEIVE_DATA } from '../constants';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../constants';
 
 function data (state = {
 	isFetching: false,
 	items: []
 }, action) {
 	switch (action.type) {
-		case REQUEST_DATA:
+		case REQUEST_ITEMLIST:
 			return Object.assign({}, state, {
 				isFetching: true
 			})
-		case RECEIVE_DATA:
+		case RECEIVE_ITEMLIST:
 			return Object.assign({}, state, {
 				isFetching: false,
 				items: action.items

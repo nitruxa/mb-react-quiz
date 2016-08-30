@@ -1,15 +1,15 @@
 import $ from 'jquery';
-import {REQUEST_DATA, RECEIVE_DATA} from '../constants';
+import {REQUEST_ITEMLIST, RECEIVE_ITEMLIST} from '../constants';
 
 function requestData () {
 	  return {
-	    type: REQUEST_DATA
+	    type: REQUEST_ITEMLIST
 	  }
 	};
 
 function receiveData (items) {
 	  return {
-	    type: RECEIVE_DATA,
+	    type: RECEIVE_ITEMLIST,
 	    items: items
 	  }
 	};

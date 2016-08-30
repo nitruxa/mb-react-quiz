@@ -1,3 +1,5 @@
-export const REQUEST_DATA = 'REQUEST_DATA';
-export const RECEIVE_DATA = 'RECEIVE_DATA';
+export const ADD_ITEMS = 9;
+
+export const REQUEST_ITEMLIST = 'REQUEST_ITEMLIST';
+export const RECEIVE_ITEMLIST = 'RECEIVE_ITEMLIST';
 
