@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './header.js';
-import BrowseContainer from '../containers/browseContainer.js';
+import BrowseLoadedContainer from '../containers/browseLoadedContainer.js';
 
 var BrowsePage = React.createClass({
 
@@ -9,7 +9,7 @@ var BrowsePage = React.createClass({
 		return (
 			<div>
 				<Header title="Browse page" />
-				<BrowseContainer />
+				<BrowseLoadedContainer />
 			</div>
 		);
 	}

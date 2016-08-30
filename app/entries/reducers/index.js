@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../constants';
 
-function data (state = {
+function itemList (state = {
 	isFetching: false,
-	items: []
+	items: null
 }, action) {
 	switch (action.type) {
 		case REQUEST_ITEMLIST:
@@ -21,7 +21,7 @@ function data (state = {
 }
 
 const reducer = combineReducers({
-	data
+	itemList
 })
 
 export default reducer

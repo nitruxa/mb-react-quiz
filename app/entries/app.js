@@ -4,11 +4,8 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
-import { ADD_ITEMS } from './constants';
 import reducer from './reducers';
 import Root from './containers/root.js';
-
-import actions from './actions';
 
 (function () {
 	
@@ -20,7 +17,5 @@ import actions from './actions';
 			<Root store={store} />,
 			document.getElementById('root')
 	);
-	
-	store.dispatch(actions.itemList.fetchData(ADD_ITEMS));
-	
+
 })();
