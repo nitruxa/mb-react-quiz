@@ -15,6 +15,8 @@ app.use('/', require('./routes/appRouter'));
 app.use('/browse', require('./routes/browseRouter'));
 app.use('/item', require('./routes/itemRouter'));
 
+app.use(express.static(__dirname + '/public'));
+
 const server = app.listen(port, function () {
     console.log('Example app listening at localhost:%s', port);
 });

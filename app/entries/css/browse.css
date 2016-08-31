@@ -1,6 +1,17 @@
 @value colors: "./colors.css";
 @value rqGolden, rqWhite, rqLightgray from colors;
 
+.browseHeader {
+	background-color: rqWhite;
+	padding: 10px;
+	border-bottom: 1px solid rqLightgray;
+	color: black;
+	font-weight: normal;
+	font-size: 24px;
+	/*width: 100%;*/
+	text-align: center;
+}
+
 .browseContainer {
 	width: 100%;
 	text-align: center;
@@ -16,6 +27,27 @@
 	height: 300px;
 	border: 1px solid rqLightgray;
 	background-color: rqWhite;	
+}
+
+.browseItemContainer {
+	width: 100%;
+	text-align: center;
+}
+
+.browseItemTable {
+	margin: 0px auto;
+	width: 100%;
+}
+
+.priceCell {
+	text-align: left;
+	font-size: 15px;
+	padding-left: 15px;
+}
+
+.favoriteCell {
+	text-align: right;
+	padding-right: 15px;
 }
 
 .footer {

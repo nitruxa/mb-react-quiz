@@ -1,10 +1,11 @@
-import sharedStyles from '../css/shared.css';
+import browseStyles from '../css/browse.css';
 
 import React from 'react';
 
-var Header = React.createClass({
+var BrowseHeader = React.createClass({
 	
 	render: function () {
+		/*
 		var link = null;
 		
 		if (this.props.link) {
@@ -12,14 +13,14 @@ var Header = React.createClass({
 				<div style={{float: "left"}}><a className={sharedStyles.leftHeaderLink} href={this.props.link.url}>{this.props.link.text}</a></div>	
 			)
 		}
-	
+		*/
 		return (
-			<div className={sharedStyles.header}>
-				{link}
-				{this.props.title}
+			<div className={browseStyles.browseHeader}>
+				{/*{link}*/}
+				Browse Page
 			</div>
 		);
 	}
 });
 
-module.exports = Header;
+module.exports = BrowseHeader;
