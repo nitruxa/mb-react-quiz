@@ -1,6 +1,7 @@
 import browseStyles from "../css/browse.css";
 
 import React from 'react';
+import { Link } from 'react-router';
 
 import Price from './price.js';
 import SetFavoriteIcon from '../containers/setFavoriteIcon.js';
@@ -14,8 +15,10 @@ var BrowseItem = React.createClass({
 					<tbody>
 						<tr>
 							<td colSpan="2">
-								<img src={this.props.item.image} />
-							</td>
+							 	<Link to={'/item/#' + this.props.item.id}>
+							 		<img src={this.props.item.image} />
+							 	</Link>
+							 </td>
 						</tr>
 						<tr>
 							<td className={browseStyles.priceCell}>
