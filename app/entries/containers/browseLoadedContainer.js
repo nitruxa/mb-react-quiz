@@ -19,12 +19,14 @@ var BrowseContainer = React.createClass({
 	},
 	
 	render: function () {
+		var limit = (this.props.items ? this.props.items.length : 0) + ADD_ITEMS;
+		
 		return (
 			<div>
 				<div className={browseStyles.browseContainer}>
 					<BrowseTable items={this.props.items} />
 				</div>
-				<LoadButton />
+				<LoadButton limit={limit} onLoadClick={this.fetchItemList} />
 			</div>
 		);
 	}
