@@ -7,11 +7,10 @@ import BrowseItem from './browseItem.js';
 var BrowseTableRow = React.createClass ({
 	
 	render: function () {
-		var cells = [];
-		this.props.items.forEach(function(item, inx) {
-			cells.push(
-				<td key={item.id + "|cell"} className={browseStyles.itemCell}>
-					<BrowseItem key={item.id + "|item"} item={item} />
+		var cells = this.props.items.map(function(item) {			
+			return (
+				<td key={item.id + '|cell'} className={browseStyles.itemCell}>
+					<BrowseItem key={item.id + '|item'} item={item} />
 				</td>
 			);
 		});
