@@ -6,8 +6,8 @@ import { Link } from 'react-router';
 var ItemHeader = React.createClass({
 	
 	render: function () {
-		var homeTxt = '< Home';
 		
+		var homeTxt = '< Home';
 		var link = (
 			<Link to="/">
 				<div className={itemStyles.leftHeaderLink}>{homeTxt}</div>

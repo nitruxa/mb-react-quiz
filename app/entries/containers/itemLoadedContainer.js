@@ -19,12 +19,18 @@ var ItemContainer = React.createClass({
 	
 	render: function () {
 		
-		return (
+		var itemCont = this.props.item ? (
 			<div>
 				<ItemHeader item={this.props.item} />
 				<div className={itemStyles.itemContainer}>
 					<ItemTable item={this.props.item} />
 				</div>
+			</div>
+		) : '';
+		
+		return (
+			<div>
+				{itemCont}
 			</div>
 		);
 	}
