@@ -14,8 +14,7 @@ function receiveItemList (items) {
 	}
 };
 
-const ItemListActions = {
-		
+const itemListActions = {
 	fetch: function (limit) {
 		return function (dispatch) {
 
@@ -29,4 +28,4 @@ const ItemListActions = {
 
 };
 
-export default ItemListActions;
+export default itemListActions;

@@ -1,9 +1,9 @@
-import ItemListActions from './itemList.js';
-import ItemActions from './item.js';
+import itemListActions from './itemList.js';
+import singleItemActions from './singleItem.js';
 
 const actions = {
-	itemList: ItemListActions,
-	item: ItemActions
+	itemList: itemListActions,
+	singleItem: singleItemActions
 };
 
 export default actions;

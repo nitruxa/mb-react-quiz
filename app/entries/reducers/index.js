@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import itemList from './itemList.js';
-import item from './item.js';
+import singleItem from './singleItem.js';
 
 const reducer = combineReducers({
 	itemList,
-	item
+	singleItem
 });
 
 export default reducer;

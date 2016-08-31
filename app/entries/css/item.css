@@ -1,0 +1,49 @@
+@value colors: './colors.css';
+@value rqGolden, rqWhite, rqLightgray, rqGray from colors;
+
+.itemHeader {
+	composes: header from './common.css';
+	position: relative;
+}
+
+.itemContainer {
+	composes: content from './common.css';
+}
+
+.itemTable {
+	margin: 0px auto;
+	border-spacing: 10px;
+	height: 350px;
+}
+
+.itemTable td {
+	background-color: rqWhite;
+	border: 1px solid rqLightgray;
+}
+
+.imageCell {
+	width: 300px;
+	height: 100%;
+}
+
+.dataCell {
+	width: 600px;
+	height: 50%;
+	padding:15px;
+	color: rqGray;
+}
+
+.descrCell {
+	composes: dataCell;
+	text-align: justify;
+}
+
+.leftHeaderLink {
+	position: absolute;
+	left: 20px;
+	top: center;
+	color: rqGolden;
+	font-weight: normal;
+	text-decoration: none;
+	font-size: 17px;
+}

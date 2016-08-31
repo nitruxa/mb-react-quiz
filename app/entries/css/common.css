@@ -1,29 +1,28 @@
-@value colors: "./colors.css";
+@value colors: './colors.css';
 @value rqGolden, rqWhitesmoke, rqLightgray, rqWhite from colors;
 
 :global(body) {
 	margin: 0px;
 	background-color: rqWhitesmoke;
 	font-family: Helvetica;
+	font-size: 17px;
 }
 
 .content {
 	width: 100%;
+	text-align: center;
 }
 
-.linkColor {
-	color: rqGolden;
+.header {
+	background-color: rqWhite;
+	padding: 10px;
+	border-bottom: 1px solid rqLightgray;
+	color: black;
+	font-weight: normal;
+	font-size: 24px;
+	text-align: center;
 }
 
 .favoriteIcon {
 	cursor: pointer;
 }
-
-/*
-.leftHeaderLink {
-	composes: linkColor;
-	font-size: 16px;
-	font-weight: normal;
-	text-decoration: none;
-}
-*/

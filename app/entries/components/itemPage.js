@@ -1,14 +1,14 @@
 import React from 'react';
-/*
-import BrowseHeader from './browseHeader.js';
-import BrowseLoadedContainer from '../containers/browseLoadedContainer.js';
-*/
-var ItemPage = React.createClass({
 
+import ItemLoadedContainer from '../containers/itemLoadedContainer.js';
+
+var ItemPage = React.createClass({
+	
 	render: function () {
+	
 		return (
 			<div>
-				test
+				<ItemLoadedContainer id={this.props.params.id} />
 			</div>
 		);
 	}

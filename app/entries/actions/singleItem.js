@@ -14,8 +14,7 @@ function receiveItem (item) {
 	}
 };
 
-const ItemActions = {
-		
+const singleItemActions = {
 	fetch: function (id) {
 		return function (dispatch) {
 
@@ -23,10 +22,10 @@ const ItemActions = {
 		    
 		    fetch('/item/' + id + '/data')
 		    .then( (resp) => resp.json() )
-		    .then( (data) => dispatch(receiveItem(data.item)) );
+		    .then( (data) => dispatch(receiveItem(data)) );
 		  }
 	}
 
 };
 
-export default ItemActions;
+export default singleItemActions;

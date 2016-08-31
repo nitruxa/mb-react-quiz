@@ -1,19 +1,12 @@
-@value colors: "./colors.css";
+@value colors: './colors.css';
 @value rqGolden, rqWhite, rqLightgray from colors;
 
 .browseHeader {
-	background-color: rqWhite;
-	padding: 10px;
-	border-bottom: 1px solid rqLightgray;
-	color: black;
-	font-weight: normal;
-	font-size: 24px;
-	text-align: center;
+	composes: header from './common.css';
 }
 
 .browseContainer {
-	width: 100%;
-	text-align: center;
+	composes: content from './common.css';
 }
 
 .browseTable {
@@ -29,8 +22,7 @@
 }
 
 .browseItemContainer {
-	width: 100%;
-	text-align: center;
+	composes: content from './common.css';
 }
 
 .browseItemTable {
@@ -40,7 +32,6 @@
 
 .priceCell {
 	text-align: left;
-	font-size: 15px;
 	padding-left: 15px;
 }
 
@@ -56,7 +47,7 @@
 }
 
 .loadButton {
-	composes: linkColor from "./common.css";
+	color: rqGolden;
 	width: 150px;
 	height: 30px;
 	font-size: 12px;
