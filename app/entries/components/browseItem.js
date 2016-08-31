@@ -15,7 +15,7 @@ var BrowseItem = React.createClass({
 					<tbody>
 						<tr>
 							<td colSpan="2">
-							 	<Link to={'/item/#' + this.props.item.id}>
+							 	<Link to={'/item/' + this.props.item.id}>
 							 		<img src={this.props.item.image} />
 							 	</Link>
 							 </td>

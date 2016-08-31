@@ -11,7 +11,9 @@ import actions from '../actions';
 var BrowseContainer = React.createClass({
 	
 	componentDidMount: function () {
-		this.fetchItemList(ADD_ITEMS);
+		if (!this.props.items) {
+			this.fetchItemList(ADD_ITEMS);
+		}
 	},
 	
 	fetchItemList: function (limit) {

@@ -5,3 +5,5 @@ export const START_INDEX = 0;
 export const REQUEST_ITEMLIST = 'REQUEST_ITEMLIST';
 export const RECEIVE_ITEMLIST = 'RECEIVE_ITEMLIST';
 
+export const REQUEST_ITEM = 'REQUEST_ITEM';
+export const RECEIVE_ITEM = 'RECEIVE_ITEM';

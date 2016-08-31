@@ -1,11 +1,11 @@
-import sharedStyles from "../css/shared.css";
+import commonStyles from "../css/common.css";
 import React from 'react';
 
 var PageCont = React.createClass({
 
 	render: function () {
 		return (
-			<div className={sharedStyles.content}>
+			<div className={commonStyles.content}>
 				{this.props.children}
 			</div>
 		);

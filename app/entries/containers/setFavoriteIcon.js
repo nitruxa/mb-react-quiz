@@ -1,4 +1,4 @@
-import sharedStyles from "../css/shared.css";
+import commonStyles from "../css/common.css";
 import React from 'react';
 import { connect } from 'react-redux';
 
@@ -10,7 +10,7 @@ var FavoriteIcon = React.createClass({
 		
 		return (
 			<div>
-				<img className={sharedStyles.favoriteIcon} src={heartSrc} />			
+				<img className={commonStyles.favoriteIcon} src={heartSrc} />			
 			</div>
 		);
 	}

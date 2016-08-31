@@ -8,7 +8,6 @@
 	color: black;
 	font-weight: normal;
 	font-size: 24px;
-	/*width: 100%;*/
 	text-align: center;
 }
 
@@ -57,7 +56,7 @@
 }
 
 .loadButton {
-	composes: linkColor from "./shared.css";
+	composes: linkColor from "./common.css";
 	width: 150px;
 	height: 30px;
 	font-size: 12px;
