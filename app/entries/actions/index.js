@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import {REQUEST_ITEMLIST, RECEIVE_ITEMLIST} from '../constants';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, START_INDEX } from '../constants';
 
 function requestItemList () {
 	return {
@@ -21,7 +21,7 @@ var itemListActions = {
 
 		    dispatch(requestItemList());
 		    
-		    fetch('/browse/data?start=0&limit=' + limit)
+		    fetch('/browse/data?start=' + START_INDEX + '&limit=' + limit)
 		    .then( (resp) => resp.json() )
 		    .then( (data) => dispatch(receiveItemList(data.items)) );
 		  }
