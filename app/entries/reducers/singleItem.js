@@ -7,7 +7,8 @@ export default function item (state = {
 	switch (action.type) {
 		case REQUEST_ITEM:
 			return Object.assign({}, state, {
-				isFetching: true
+				isFetching: true,
+				item: null
 			})
 		case RECEIVE_ITEM:
 			return Object.assign({}, state, {
