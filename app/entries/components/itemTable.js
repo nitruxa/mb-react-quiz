@@ -9,6 +9,10 @@ import ItemDescr from './itemDescr.js';
 
 var ItemTable = React.createClass({
 	
+	handleFavIconClick: function () {
+		this.props.onFavIconClick();
+	},
+	
 	render: function () {
 		
 		var item = this.props.item;
@@ -18,7 +22,7 @@ var ItemTable = React.createClass({
 				<tbody>
 					<tr>
 						<td rowSpan="2" className={itemStyles.imageCell}>
-							<ItemImage item={item} />
+							<ItemImage item={item} onFavIconClick={this.handleFavIconClick} />
 						</td>
 						<td className={itemStyles.dataCell}>
 							<ItemData key={item.id + '|data'} item={item} />

@@ -56,7 +56,6 @@ const itemListActions = {
 			dispatch(setFavItemList(params));
 		}
 	}
-
 };
 
 export default itemListActions;

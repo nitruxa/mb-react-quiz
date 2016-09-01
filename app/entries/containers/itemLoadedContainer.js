@@ -13,6 +13,13 @@ var ItemContainer = React.createClass({
 		this.fetchItem(this.props.id);
 	},
 	
+	handleFavIconClick: function () {
+		this.props.dispatch(actions.singleItem.setFavorite({
+			id: this.props.item.id,
+			favorite: !this.props.item.favorite
+		}));
+	},
+	
 	fetchItem: function (id) {
 		this.props.dispatch(actions.singleItem.fetch(id));
 	},
@@ -23,7 +30,7 @@ var ItemContainer = React.createClass({
 			<div>
 				<ItemHeader key={this.props.item.id + '|header'} item={this.props.item} />
 				<div className={itemStyles.itemContainer}>
-					<ItemTable item={this.props.item} />
+					<ItemTable item={this.props.item} onFavIconClick={this.handleFavIconClick} />
 				</div>
 			</div>
 		) : '';

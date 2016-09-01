@@ -31,8 +31,11 @@ var favStorage = {
 	},
 	
 	getFavItems: function () {
-		var favStorage = localStorage.getItem(FAV_STORAGE_NAME);
-		var favItems = favStorage ? JSON.parse(favStorage) : [];
+		var favItems = [];
+		if (this.storageAvailable()) {
+			var favStorage = localStorage.getItem(FAV_STORAGE_NAME);
+			favItems = favStorage ? JSON.parse(favStorage) : [];
+		}
 		return favItems;
 	}
 	
