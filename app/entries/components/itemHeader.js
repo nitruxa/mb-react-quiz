@@ -7,11 +7,10 @@ var ItemHeader = React.createClass({
 	
 	render: function () {
 		
-		var homeTxt = '< Home';
 		var link = (
-			<Link to="/">
-				<div className={itemStyles.leftHeaderLink}>{homeTxt}</div>
-			</Link>
+			<div className={itemStyles.leftHeaderLink}>
+				<Link to="/" className={itemStyles.linkText}>{'< Home'}</Link>
+			</div>
 		)
 		
 		var logo = this.props.item ? (
