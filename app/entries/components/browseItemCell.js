@@ -9,11 +9,14 @@ import FavIcon from './favIcon.js';
 var BrowseItemCell = React.createClass({
 	
 	shouldComponentUpdate: function (nextProps) {
-		return false;
+		return nextProps.item.favorite !== this.props.item.favorite;
 	},
 	
 	handleFavIconClick: function () {
-		this.props.onFavIconClick(this.props.item.id);
+		this.props.onFavIconClick({
+			id: this.props.item.id,
+			favorite: !this.props.item.favorite
+		});
 	},
 	
 	render: function () {

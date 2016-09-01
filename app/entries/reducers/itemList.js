@@ -1,8 +1,17 @@
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, TOGGLE_FAV_ITEMLIST } from '../constants';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, SET_FAV_ITEMLIST } from '../constants';
 
-
-function toggleFavInStateList (state, action) {
-	return Object.assign({}, state, {});
+function setFavInNewState (state, action) {	
+	var items = JSON.parse(JSON.stringify(state.items));
+	
+	var inx = items.findIndex(function(item) {
+		return item.id === action.id;
+	});
+	
+	items[inx].favorite = action.favorite;
+	
+	return Object.assign({}, state, {
+		items: items
+	});
 };
 
 export default function itemList (state = {
@@ -19,8 +28,8 @@ export default function itemList (state = {
 				isFetching: false,
 				items: action.items
 			})
-		case TOGGLE_FAV_ITEMLIST:
-			return toggleFavInStateList(state, action)
+		case SET_FAV_ITEMLIST:
+			return setFavInNewState(state, action)
 		default:
 			return state
 	}

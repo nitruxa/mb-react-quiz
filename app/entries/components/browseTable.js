@@ -8,10 +8,10 @@ import { ADD_ITEMS, CELLS_IN_ROW } from '../constants';
 
 var BrowseTable = React.createClass({
 	
-	handleFavIconClick: function (id) {
-		this.props.onFavIconClick(id);
+	handleFavIconClick: function (params) {
+		this.props.onFavIconClick(params);
 	},
-	
+	/*
 	getRowId: function (nr) {
 		return (nr + '|tr');
 	},
@@ -26,15 +26,20 @@ var BrowseTable = React.createClass({
 		}
 	},
 	
+	componentDidUpdate: function () {
+		this.focusOnNewItems();
+	},
+	*/
 	getRows: function () {
 		var rows = [];			
 		var i, rowCnt = 1, lng = this.props.items.length;
 		
 		for (i = 0; i < lng; i += CELLS_IN_ROW) {
 			var rowItems = this.props.items.slice(i, i + CELLS_IN_ROW);
-			var rowId = this.getRowId(rowCnt);
+			//var rowId = this.getRowId(rowCnt);
+			//ref={rowId}
 			rows.push(
-				<BrowseTableRow ref={rowId} key={rowId} items={rowItems} onFavIconClick={this.handleFavIconClick} />
+				<BrowseTableRow key={rowCnt + '|tr'} items={rowItems} onFavIconClick={this.handleFavIconClick} />
 			);
 			
 			rowCnt++;
@@ -42,10 +47,6 @@ var BrowseTable = React.createClass({
 		return rows;
 	},
 	
-	componentDidUpdate: function () {
-		this.focusOnNewItems();
-	},
-
 	render: function () {
 		
 		var table = this.props.items ? (

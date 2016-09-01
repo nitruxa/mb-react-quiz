@@ -11,13 +11,13 @@ import actions from '../actions';
 var BrowseContainer = React.createClass({
 	
 	componentDidMount: function () {
-		if (!this.props.items) {
-			this.fetchItemList(ADD_ITEMS);
-		}
+		var limit = this.props.items ? this.props.items.length : ADD_ITEMS;
+		
+		this.fetchItemList(limit);
 	},
 	
-	handleFavIconClick: function (id) {
-		this.props.dispatch(actions.itemList.toggleFav(id));
+	handleFavIconClick: function (params) {
+		this.props.dispatch(actions.itemList.setFavorite(params));
 	},
 	
 	fetchItemList: function (limit) {
