@@ -1,5 +1,5 @@
 @value colors: './colors.css';
-@value rqGolden, rqWhitesmoke, rqLightgray, rqWhite from colors;
+@value rqWhitesmoke, rqLightgray, rqWhite from colors;
 
 :global(body) {
 	margin: 0px;

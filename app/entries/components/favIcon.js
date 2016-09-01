@@ -1,6 +1,5 @@
 import commonStyles from "../css/common.css";
 import React from 'react';
-import { connect } from 'react-redux';
 
 var FavIcon = React.createClass({
 	

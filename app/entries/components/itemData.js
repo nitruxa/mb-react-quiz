@@ -1,7 +1,6 @@
 import itemStyles from "../css/item.css";
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import Price from './price.js';
 
@@ -18,20 +17,20 @@ var ItemData = React.createClass({
 				<tbody>
 					<tr>
 						<td colSpan="2">
-							<div>
-								{this.props.item.title}
-							</div>
-							<div>
-								<Price price={this.props.item.price} />
+							<div className={itemStyles.dataTop}>
+								<div className={itemStyles.header2}>{this.props.item.title}</div>
+								<div className={itemStyles.header2} style={{marginTop: 10, marginBottom: 10}}><Price price={this.props.item.price} /></div>
+								<div className={itemStyles.header3}>Measurements:</div>
+								<div>H {this.props.item.measurements.height} Dm {this.props.item.measurements.diameter}</div>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td>
-							<div>PURCHASE</div>
+						<td style={{verticalAlign: 'bottom'}}>
+							<div className={itemStyles.purchaseBtn} style={{borderLeft: 'none'}}>PURCHASE</div>
 						</td>
-						<td>
-							<div>MAKE OFFER</div>
+						<td style={{verticalAlign: 'bottom'}}>
+							<div className={itemStyles.purchaseBtn} style={{borderRight: 'none'}}>MAKE OFFER</div>
 						</td>
 					</tr>
 				</tbody>

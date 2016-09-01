@@ -1,7 +1,6 @@
 import itemStyles from "../css/item.css";
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 var ItemData = React.createClass({
 	
@@ -14,7 +13,7 @@ var ItemData = React.createClass({
 		return (
 			<div>
 				{this.props.item.description}
-				<div style={{marginTop: 20}}><span style={{color: 'black'}}>Creator: </span>{this.props.item.creators}</div>
+				<div style={{marginTop: 20}}><span className={itemStyles.header3}>Creator: </span>{this.props.item.creators}</div>
 			</div>
 		);
 	}
