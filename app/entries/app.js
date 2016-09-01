@@ -5,7 +5,7 @@ import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 
 import reducer from './reducers';
-import Root from './containers/root.js';
+import Root from './components/root.js';
 
 (function () {
 	
