@@ -8,7 +8,7 @@ var ItemData = React.createClass({
 	render: function () {
 		
 		return (
-			<div style={{width: '100%'}}>
+			<div>
 				{this.props.item.description}
 				<div style={{marginTop: 20}}><span style={{color: 'black'}}>Creator: </span>{this.props.item.creators}</div>
 			</div>
