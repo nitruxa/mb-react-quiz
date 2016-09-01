@@ -8,6 +8,10 @@ import { ADD_ITEMS, CELLS_IN_ROW } from '../constants';
 
 var BrowseTable = React.createClass({
 	
+	handleFavIconClick: function (id) {
+		this.props.onFavIconClick(id);
+	},
+	
 	getRowId: function (nr) {
 		return (nr + '|tr');
 	},
@@ -30,7 +34,7 @@ var BrowseTable = React.createClass({
 			var rowItems = this.props.items.slice(i, i + CELLS_IN_ROW);
 			var rowId = this.getRowId(rowCnt);
 			rows.push(
-				<BrowseTableRow ref={rowId} key={rowId} items={rowItems} />
+				<BrowseTableRow ref={rowId} key={rowId} items={rowItems} onFavIconClick={this.handleFavIconClick} />
 			);
 			
 			rowCnt++;

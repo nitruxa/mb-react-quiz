@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, START_INDEX } from '../constants';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, TOGGLE_FAV_ITEMLIST, START_INDEX } from '../constants';
 
 function requestItemList () {
 	return {
@@ -14,6 +14,13 @@ function receiveItemList (items) {
 	}
 };
 
+function toggleFavItemList (id) {
+	return {
+		type: TOGGLE_FAV_ITEMLIST,
+		id: id
+	}
+};
+
 const itemListActions = {
 	fetch: function (limit) {
 		return function (dispatch) {
@@ -22,8 +29,26 @@ const itemListActions = {
 		    
 		    fetch('/browse/data?start=' + START_INDEX + '&limit=' + limit)
 		    .then( (resp) => resp.json() )
-		    .then( (data) => dispatch(receiveItemList(data.items)) );
-		  }
+		    .then( (data) => {
+		    	/*
+		    	data.items.forEach(function (item) {
+		            item.favorite = true;
+		        });
+		    	*/
+		    	dispatch(receiveItemList(data.items)) ;
+		    
+		    });
+		}
+	},
+	
+	toggleFav: function (id) {
+		return function (dispatch) {
+			
+			
+			//write to storage
+			
+			dispatch(toggleFavItemList(id));
+		}
 	}
 
 };

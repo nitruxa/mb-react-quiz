@@ -16,6 +16,10 @@ var BrowseContainer = React.createClass({
 		}
 	},
 	
+	handleFavIconClick: function (id) {
+		this.props.dispatch(actions.itemList.toggleFav(id));
+	},
+	
 	fetchItemList: function (limit) {
 		this.props.dispatch(actions.itemList.fetch(limit));
 	},
@@ -26,7 +30,7 @@ var BrowseContainer = React.createClass({
 		var browseCont = this.props.items ? (
 			<div>
 				<div className={browseStyles.browseContainer}>
-					<BrowseTable items={this.props.items} />
+					<BrowseTable items={this.props.items} onFavIconClick={this.handleFavIconClick} />
 				</div>
 				<LoadButton limit={limit} onLoadClick={this.fetchItemList} />
 			</div>

@@ -7,9 +7,13 @@ import Price from './price.js';
 import FavIcon from './favIcon.js';
 
 var BrowseItemCell = React.createClass({
-
-	shouldComponentUpdate: function () {
+	
+	shouldComponentUpdate: function (nextProps) {
 		return false;
+	},
+	
+	handleFavIconClick: function () {
+		this.props.onFavIconClick(this.props.item.id);
 	},
 	
 	render: function () {
@@ -29,7 +33,7 @@ var BrowseItemCell = React.createClass({
 								<Price price={this.props.item.price} />
 							</td>
 							<td className={browseStyles.favoriteCell}>
-								<FavIcon />
+								<FavIcon fav={this.props.item.favorite} onFavIconClick={this.handleFavIconClick} />
 							</td>
 						</tr>
 					</tbody>

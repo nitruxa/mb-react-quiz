@@ -3,14 +3,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 var FavIcon = React.createClass({
+	
+	handleFavIconClick: function () {
+		this.props.onFavIconClick();
+	},
 
 	render: function () {
-		var heartSrc = '/img/heart_empty_24.png';
-		
+		var heartSrc = this.props.fav ? '/img/heart_24.png' : '/img/heart_empty_24.png';
 		
 		return (
 			<div>
-				<img className={commonStyles.favoriteIcon} src={heartSrc} />			
+				<img onClick={this.handleFavIconClick} className={commonStyles.favoriteIcon} src={heartSrc} />			
 			</div>
 		);
 	}

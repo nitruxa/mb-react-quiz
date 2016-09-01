@@ -1,4 +1,9 @@
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../constants';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, TOGGLE_FAV_ITEMLIST } from '../constants';
+
+
+function toggleFavInStateList (state, action) {
+	return Object.assign({}, state, {});
+};
 
 export default function itemList (state = {
 	isFetching: false,
@@ -14,6 +19,8 @@ export default function itemList (state = {
 				isFetching: false,
 				items: action.items
 			})
+		case TOGGLE_FAV_ITEMLIST:
+			return toggleFavInStateList(state, action)
 		default:
 			return state
 	}
