@@ -10,3 +10,5 @@ export const RECEIVE_ITEM = 'RECEIVE_ITEM';
 
 export const SET_FAV_ITEMLIST = 'SET_FAV_ITEMLIST';
 export const SET_FAV_ITEM = 'SET_FAV_ITEM';
+
+export const FAV_STORAGE_NAME = 'FAV_ITEMS';
