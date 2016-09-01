@@ -3,7 +3,7 @@ import itemStyles from "../css/item.css";
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SetFavoriteIcon from '../containers/setFavoriteIcon.js';
+import FavIcon from './favIcon.js';
 
 var ItemImage = React.createClass({
 	
@@ -13,7 +13,7 @@ var ItemImage = React.createClass({
 			<div style={{position: 'relative', height: '100%'}}>
 				<img src={this.props.item.image} />
 				<div style={{position: 'absolute', top: 10, right: 10}}>
-					<SetFavoriteIcon />
+					<FavIcon />
 				</div>
 			</div>
 		);

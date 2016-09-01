@@ -12,7 +12,7 @@ var BrowseTableRow = React.createClass ({
 			<tr>
 				{this.props.items.map(function(item) {
 						return (
-							<BrowseItemCell key={item.id + '|cell'} item={item} />
+							<BrowseItemCell key={item.id + '|browseItemCell'} item={item} />
 						);
 					}
 				)}

@@ -4,10 +4,14 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Price from './price.js';
-import SetFavoriteIcon from '../containers/setFavoriteIcon.js';
+import FavIcon from './favIcon.js';
 
 var BrowseItemCell = React.createClass({
 
+	shouldComponentUpdate: function () {
+		return false;
+	},
+	
 	render: function () {
 		return (
 			<td className={browseStyles.itemCell}>
@@ -25,7 +29,7 @@ var BrowseItemCell = React.createClass({
 								<Price price={this.props.item.price} />
 							</td>
 							<td className={browseStyles.favoriteCell}>
-								<SetFavoriteIcon />
+								<FavIcon />
 							</td>
 						</tr>
 					</tbody>

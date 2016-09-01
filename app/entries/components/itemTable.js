@@ -21,12 +21,12 @@ var ItemTable = React.createClass({
 							<ItemImage item={item} />
 						</td>
 						<td className={itemStyles.dataCell}>
-							<ItemData item={item} />
+							<ItemData key={item.id + '|data'} item={item} />
 						</td>
 					</tr>
 					<tr>
 						<td className={itemStyles.descrCell}>
-							<ItemDescr item={item} />
+							<ItemDescr key={item.id + '|descr'} item={item} />
 						</td>
 					</tr>
 				</tbody>

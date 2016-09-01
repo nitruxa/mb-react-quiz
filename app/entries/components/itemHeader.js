@@ -5,6 +5,10 @@ import { Link } from 'react-router';
 
 var ItemHeader = React.createClass({
 	
+	shouldComponentUpdate: function () {
+		return false;
+	},
+	
 	render: function () {
 		
 		var link = (

@@ -21,7 +21,7 @@ var ItemContainer = React.createClass({
 		
 		var itemCont = this.props.item ? (
 			<div>
-				<ItemHeader item={this.props.item} />
+				<ItemHeader key={this.props.item.id + '|header'} item={this.props.item} />
 				<div className={itemStyles.itemContainer}>
 					<ItemTable item={this.props.item} />
 				</div>

@@ -2,7 +2,7 @@ import commonStyles from "../css/common.css";
 import React from 'react';
 import { connect } from 'react-redux';
 
-var FavoriteIcon = React.createClass({
+var FavIcon = React.createClass({
 
 	render: function () {
 		var heartSrc = '/img/heart_empty_24.png';
@@ -16,8 +16,4 @@ var FavoriteIcon = React.createClass({
 	}
 });
 
-const SetFavoriteIcon = connect(
-		
-)(FavoriteIcon);
-
-export default SetFavoriteIcon;
+module.exports = FavIcon;

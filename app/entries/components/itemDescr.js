@@ -5,6 +5,10 @@ import ReactDOM from 'react-dom';
 
 var ItemData = React.createClass({
 	
+	shouldComponentUpdate: function () {
+		return false;
+	},
+	
 	render: function () {
 		
 		return (
