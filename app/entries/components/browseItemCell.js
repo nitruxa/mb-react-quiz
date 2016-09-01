@@ -6,11 +6,11 @@ import { Link } from 'react-router';
 import Price from './price.js';
 import SetFavoriteIcon from '../containers/setFavoriteIcon.js';
 
-var BrowseItem = React.createClass({
+var BrowseItemCell = React.createClass({
 
 	render: function () {
 		return (
-			<div className={browseStyles.browseItemContainer}>
+			<td className={browseStyles.itemCell}>
 				<table className={browseStyles.browseItemTable}>
 					<tbody>
 						<tr>
@@ -30,9 +30,9 @@ var BrowseItem = React.createClass({
 						</tr>
 					</tbody>
 				</table>
-			</div>
+			</td>
 		);
 	}
 });
 
-module.exports = BrowseItem;
+module.exports = BrowseItemCell;
