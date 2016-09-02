@@ -2,17 +2,13 @@ import commonStyles from "../css/common.css";
 import React from 'react';
 
 var FavIcon = React.createClass({
-	
-	handleFavIconClick: function () {
-		this.props.onFavIconClick();
-	},
 
 	render: function () {
 		var heartSrc = this.props.fav ? '/img/heart_24.png' : '/img/heart_empty_24.png';
 		
 		return (
 			<div>
-				<img onClick={this.handleFavIconClick} className={commonStyles.favoriteIcon} src={heartSrc} />			
+				<img onClick={this.props.onFavIconClick} className={commonStyles.favoriteIcon} src={heartSrc} />			
 			</div>
 		);
 	}

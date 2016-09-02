@@ -9,10 +9,6 @@ import FavIcon from './favIcon.js';
 
 var ItemTable = React.createClass({
 	
-	handleFavIconClick: function () {
-		this.props.onFavIconClick();
-	},
-	
 	render: function () {
 		
 		var item = this.props.item;
@@ -24,7 +20,7 @@ var ItemTable = React.createClass({
 						<td rowSpan="2" className={itemStyles.imageCell}>
 							<ItemImage key={item.id + '|img'} item={item} />
 							<div className={itemStyles.favIconCont}>
-								<FavIcon fav={item.favorite} onFavIconClick={this.handleFavIconClick} />
+								<FavIcon fav={item.favorite} onFavIconClick={this.props.onFavIconClick} />
 							</div>
 						</td>
 						<td className={itemStyles.dataCell}>

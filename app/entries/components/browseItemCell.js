@@ -12,13 +12,6 @@ var BrowseItemCell = React.createClass({
 		return nextProps.item.favorite !== this.props.item.favorite;
 	},
 	
-	handleFavIconClick: function () {
-		this.props.onFavIconClick({
-			id: this.props.item.id,
-			favorite: !this.props.item.favorite
-		});
-	},
-	
 	render: function () {
 		return (
 			<td className={browseStyles.itemCell}>
@@ -36,7 +29,10 @@ var BrowseItemCell = React.createClass({
 								<Price price={this.props.item.price} />
 							</td>
 							<td className={browseStyles.favoriteCell}>
-								<FavIcon fav={this.props.item.favorite} onFavIconClick={this.handleFavIconClick} />
+								<FavIcon fav={this.props.item.favorite} onFavIconClick={() => this.props.onFavIconClick({
+									id: this.props.item.id,
+									favorite: !this.props.item.favorite
+								})} />
 							</td>
 						</tr>
 					</tbody>

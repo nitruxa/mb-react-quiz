@@ -1,47 +1,8 @@
-import itemStyles from "../css/item.css";
-
-import React from 'react';
 import { connect } from 'react-redux';
 
-import ItemHeader from '../components/itemHeader.js';
-import ItemTable from '../components/itemTable.js';
-import actions from '../actions';
+import ItemContainer from '../components/itemContainer.js';
 
-var ItemContainer = React.createClass({
-	
-	componentDidMount: function () {
-		this.fetchItem(this.props.id);
-	},
-	
-	handleFavIconClick: function () {
-		this.props.dispatch(actions.singleItem.setFavorite({
-			id: this.props.item.id,
-			favorite: !this.props.item.favorite
-		}));
-	},
-	
-	fetchItem: function (id) {
-		this.props.dispatch(actions.singleItem.fetch(id));
-	},
-	
-	render: function () {
-		
-		var itemCont = this.props.item ? (
-			<div>
-				<ItemHeader key={this.props.item.id + '|header'} item={this.props.item} />
-				<div className={itemStyles.itemContainer}>
-					<ItemTable item={this.props.item} onFavIconClick={this.handleFavIconClick} />
-				</div>
-			</div>
-		) : '';
-		
-		return (
-			<div>
-				{itemCont}
-			</div>
-		);
-	}
-});
+import actions from '../actions';
 
 const mapStateToProps = (state) => {
 	return {
@@ -49,8 +10,20 @@ const mapStateToProps = (state) => {
 	}
 };
 
+const mapDispatchToProps = (dispatch) => {
+	return {
+		fetchItem: (id) => {
+			dispatch(actions.singleItem.fetch(id));
+		},
+		onFavIconClick: (params) => {
+			dispatch(actions.singleItem.setFavorite(params));
+		},
+	}
+};
+
 const ItemLoadedContainer = connect(
-	mapStateToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(ItemContainer);
 
 export default ItemLoadedContainer;

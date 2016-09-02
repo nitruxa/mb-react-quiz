@@ -6,19 +6,15 @@ import BrowseItemCell from './browseItemCell.js';
 
 var BrowseTableRow = React.createClass ({
 	
-	handleFavIconClick: function (params) {
-		this.props.onFavIconClick(params);
-	},
-	
 	render: function () {
 		
-		var handleFavIconClick = this.handleFavIconClick;
+		var onFavIconClick = this.props.onFavIconClick;
 		
 		return (
 			<tr>
 				{this.props.items.map(function(item) {
 						return (
-							<BrowseItemCell key={item.id + '|browseItemCell'} item={item} onFavIconClick={handleFavIconClick} />
+							<BrowseItemCell key={item.id + '|browseItemCell'} item={item} onFavIconClick={onFavIconClick} />
 						);
 					}
 				)}
