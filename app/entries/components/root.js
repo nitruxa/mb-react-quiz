@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, hashHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 import routes from '../routes';
@@ -11,7 +11,7 @@ var Root = React.createClass({
 		return (
 			<div>
 				<Provider store={this.props.store}>
-					<Router history={hashHistory}>	
+					<Router history={browserHistory}>	
 						{routes()}
 					</Router>
 				</Provider>
