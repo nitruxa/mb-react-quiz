@@ -7,7 +7,7 @@ module.exports = {
     entry: {
     	app: 'entries/app.js',
         //browse: 'entries/browse.js',
-        //item: 'entries/item.js'
+        item: 'entries/app.js'
     },
     output: {
         path: path.join(__dirname, '..'),
