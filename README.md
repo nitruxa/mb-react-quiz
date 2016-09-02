@@ -8,12 +8,12 @@ Redux framework was used for Flux architecture, as well as React Router for rout
 
 ## Additionally installed modules
 
-..* es6-promise
-..* isomorphic-fetch
-..* react-redux
-..* react-router
-..* redux
-..* redux-logger
-..* redux-thunk
+* es6-promise
+* isomorphic-fetch
+* react-redux
+* react-router
+* redux
+* redux-logger
+* redux-thunk
 
 They are added to *package.json* dependencies.
