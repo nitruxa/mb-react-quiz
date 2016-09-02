@@ -8,13 +8,13 @@ const getItem = function (itemId) {
         return item.id === itemId || item.integerId === itemId;
     }) || {};
 };
-/*
+
 itemRouter.get('/:id', (req, res) => {
-    const id = req.params.id;
-    const item = getItem(id);
-    res.render('item', {item});
+    //const id = req.params.id;
+    //const item = getItem(id);
+    res.render('app', {/*item*/});
 });
-*/
+
 itemRouter.get('/:id/data', (req, res) => {
     const id = req.params.id;
     const item = getItem(id);
