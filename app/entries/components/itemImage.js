@@ -2,13 +2,13 @@ import itemStyles from "../css/item.css";
 
 import React from 'react';
 
-var ItemImage = React.createClass({
+class ItemImage extends React.Component {
 	
-	shouldComponentUpdate: function () {
+	shouldComponentUpdate () {
 		return false;
-	},
+	}
 
-	render: function () {
+	render () {
 		
 		return (
 			<div>
@@ -16,6 +16,6 @@ var ItemImage = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = ItemImage;
+export default ItemImage;

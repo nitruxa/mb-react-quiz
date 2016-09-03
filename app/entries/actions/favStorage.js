@@ -1,6 +1,6 @@
 import { FAV_STORAGE_NAME } from '../constants';
 
-var favStorage = {
+const favStorage = {
 
 	storageAvailable: function () {
 		var available = typeof(Storage) !== 'undefined';
@@ -41,4 +41,4 @@ var favStorage = {
 	
 };
 
-module.exports = favStorage;
+export default favStorage;

@@ -3,9 +3,9 @@ import React from 'react';
 import BrowseHeader from './browseHeader.js';
 import BrowseLoadedContainer from '../containers/browseLoadedContainer.js';
 
-var BrowsePage = React.createClass({
+class BrowsePage extends React.Component {
 
-	render: function () {
+	render () {
 		return (
 			<div>
 				<BrowseHeader />
@@ -13,6 +13,6 @@ var BrowsePage = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = BrowsePage;
+export default BrowsePage;

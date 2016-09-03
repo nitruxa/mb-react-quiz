@@ -5,22 +5,19 @@ import React from 'react';
 import ItemHeader from './itemHeader.js';
 import ItemTable from './itemTable.js';
 
-var ItemContainer = React.createClass({
+class ItemContainer extends React.Component {
 	
-	componentDidMount: function () {
+	componentDidMount () {
 		this.props.fetchItem(this.props.id);
-	},
+	}
 	
-	render: function () {
+	render () {
 		
 		var itemCont = this.props.item ? (
 			<div>
 				<ItemHeader key={this.props.item.id + '|header'} item={this.props.item} />
 				<div className={itemStyles.itemContainer}>
-					<ItemTable item={this.props.item} onFavIconClick={() => this.props.onFavIconClick({
-						id: this.props.item.id,
-						favorite: !this.props.item.favorite
-					})} />
+					<ItemTable item={this.props.item} />
 				</div>
 			</div>
 		) : '';
@@ -31,6 +28,6 @@ var ItemContainer = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = ItemContainer;
+export default ItemContainer;

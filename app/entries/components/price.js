@@ -1,8 +1,8 @@
 import React from 'react';
 
-var Price = React.createClass({
+class Price extends React.Component {
 
-	render: function () {
+	render () {
 		
 		var price = this.props.price ? this.props.price.amounts.USD : 'Price Upon Request';
 		
@@ -12,6 +12,6 @@ var Price = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = Price;
+export default Price;

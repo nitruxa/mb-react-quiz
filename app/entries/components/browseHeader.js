@@ -2,9 +2,9 @@ import browseStyles from '../css/browse.css';
 
 import React from 'react';
 
-var BrowseHeader = React.createClass({
+class BrowseHeader extends React.Component {
 	
-	render: function () {
+	render () {
 		
 		return (
 			<div className={browseStyles.browseHeader}>
@@ -12,6 +12,6 @@ var BrowseHeader = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = BrowseHeader;
+export default BrowseHeader;

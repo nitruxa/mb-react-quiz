@@ -3,26 +3,26 @@ import browseStyles from "../css/browse.css";
 import React from 'react';
 
 import BrowseTableRow from './browseTableRow.js';
-import { ADD_ITEMS, CELLS_IN_ROW } from '../constants';
+import { CELLS_IN_ROW } from '../constants';
 
-var BrowseTable = React.createClass({
+class BrowseTable extends React.Component {
 	
-	getRows: function () {
+	getRows () {
 		var rows = [];			
 		var i, rowCnt = 1, lng = this.props.items.length;
 		
 		for (i = 0; i < lng; i += CELLS_IN_ROW) {
 			var rowItems = this.props.items.slice(i, i + CELLS_IN_ROW);
 			rows.push(
-				<BrowseTableRow key={rowCnt + '|tr'} items={rowItems} onFavIconClick={this.props.onFavIconClick} />
+				<BrowseTableRow key={rowCnt + '|tr'} items={rowItems} />
 			);
 			
 			rowCnt++;
 		}
 		return rows;
-	},
+	}
 	
-	render: function () {
+	render () {
 		
 		var table = this.props.items ? (
 			<table className={browseStyles.browseTable}>
@@ -38,6 +38,6 @@ var BrowseTable = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = BrowseTable;
+export default BrowseTable;

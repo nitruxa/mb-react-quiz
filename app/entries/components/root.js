@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 
 import routes from '../routes';
 
-var Root = React.createClass({
+class Root extends React.Component {
 
-	render: function () {
+	render () {
 		
 		return (
 			<div>
@@ -18,6 +18,6 @@ var Root = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = Root;
+export default Root;

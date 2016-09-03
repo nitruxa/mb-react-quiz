@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { REQUEST_ITEM, RECEIVE_ITEM, SET_FAV_ITEM } from '../constants';
+import { REQUEST_ITEM, RECEIVE_ITEM } from '../constants';
 import favStorage from './favStorage.js';
 
 function requestItem () {
@@ -15,14 +15,6 @@ function receiveItem (item) {
 	}
 };
 
-function setFavItem (params) {
-	return {
-		type: SET_FAV_ITEM,
-		id: params.id,
-		favorite: params.favorite
-	}
-};
-
 const singleItemActions = {
 	fetch: function (id) {
 		return function (dispatch) {
@@ -34,7 +26,6 @@ const singleItemActions = {
 		    .then( (item) => {
 		    	
 		    	var favItems = favStorage.getFavItems();
-		    	
 		    	var inx = favItems.findIndex(function(id) {
 		    		return id === item.id;
 		    	});
@@ -42,15 +33,6 @@ const singleItemActions = {
 		    	
 		    	dispatch(receiveItem(item));
 		    });
-		}
-	},
-
-	setFavorite: function (params) {
-		return function (dispatch) {
-			
-			favStorage.setFavItem(params);
-			
-			dispatch(setFavItem(params));
 		}
 	}
 };

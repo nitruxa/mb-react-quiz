@@ -3,13 +3,13 @@ import itemStyles from '../css/item.css';
 import React from 'react';
 import { Link } from 'react-router';
 
-var ItemHeader = React.createClass({
+class ItemHeader extends React.Component {
 	
-	shouldComponentUpdate: function () {
+	shouldComponentUpdate () {
 		return false;
-	},
+	}
 	
-	render: function () {
+	render () {
 		
 		var link = (
 			<div className={itemStyles.leftHeaderLink}>
@@ -28,6 +28,6 @@ var ItemHeader = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = ItemHeader;
+export default ItemHeader;

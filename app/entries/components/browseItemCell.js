@@ -4,15 +4,15 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Price from './price.js';
-import FavIcon from './favIcon.js';
+import FavIconContainer from '../containers/favIconContainer.js';
 
-var BrowseItemCell = React.createClass({
+class BrowseItemCell extends React.Component {
 	
-	shouldComponentUpdate: function (nextProps) {
+	shouldComponentUpdate (nextProps) {
 		return nextProps.item.favorite !== this.props.item.favorite;
-	},
+	}
 	
-	render: function () {
+	render () {
 		return (
 			<td className={browseStyles.itemCell}>
 				<table className={browseStyles.browseItemTable}>
@@ -29,10 +29,7 @@ var BrowseItemCell = React.createClass({
 								<Price price={this.props.item.price} />
 							</td>
 							<td className={browseStyles.favoriteCell}>
-								<FavIcon fav={this.props.item.favorite} onFavIconClick={() => this.props.onFavIconClick({
-									id: this.props.item.id,
-									favorite: !this.props.item.favorite
-								})} />
+								<FavIconContainer item={this.props.item} itemList={true} />
 							</td>
 						</tr>
 					</tbody>
@@ -40,6 +37,6 @@ var BrowseItemCell = React.createClass({
 			</td>
 		);
 	}
-});
+}
 
-module.exports = BrowseItemCell;
+export default BrowseItemCell;

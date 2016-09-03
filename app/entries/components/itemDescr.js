@@ -2,13 +2,13 @@ import itemStyles from "../css/item.css";
 
 import React from 'react';
 
-var ItemData = React.createClass({
+class ItemDescr extends React.Component {
 	
-	shouldComponentUpdate: function () {
+	shouldComponentUpdate () {
 		return false;
-	},
+	}
 	
-	render: function () {
+	render () {
 		
 		return (
 			<div>
@@ -17,6 +17,6 @@ var ItemData = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = ItemData;
+export default ItemDescr;

@@ -4,13 +4,13 @@ import React from 'react';
 
 import Price from './price.js';
 
-var ItemData = React.createClass({
+class ItemData extends React.Component {
 	
-	shouldComponentUpdate: function () {
+	shouldComponentUpdate () {
 		return false;
-	},
+	}
 	
-	render: function () {
+	render () {
 		
 		return (
 			<table className={itemStyles.dataTable}>
@@ -37,6 +37,6 @@ var ItemData = React.createClass({
 			</table>
 		);
 	}
-});
+}
 
-module.exports = ItemData;
+export default ItemData;

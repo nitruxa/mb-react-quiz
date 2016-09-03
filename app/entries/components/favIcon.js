@@ -1,17 +1,21 @@
 import commonStyles from "../css/common.css";
 import React from 'react';
 
-var FavIcon = React.createClass({
+class FavIcon extends React.Component {
 
-	render: function () {
-		var heartSrc = this.props.fav ? '/img/heart_24.png' : '/img/heart_empty_24.png';
+	render () {
+		var heartSrc = this.props.item.favorite ? '/img/heart_24.png' : '/img/heart_empty_24.png';
 		
 		return (
 			<div>
-				<img onClick={this.props.onFavIconClick} className={commonStyles.favoriteIcon} src={heartSrc} />			
+				<img onClick={() => this.props.onFavIconClick({
+					id: this.props.item.id,
+					favorite: !this.props.item.favorite,
+					itemList: this.props.itemList
+				})} className={commonStyles.favoriteIcon} src={heartSrc} />			
 			</div>
 		);
 	}
-});
+}
 
-module.exports = FavIcon;
+export default FavIcon;

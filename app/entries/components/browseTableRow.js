@@ -4,23 +4,21 @@ import React from 'react';
 
 import BrowseItemCell from './browseItemCell.js';
 
-var BrowseTableRow = React.createClass ({
+class BrowseTableRow extends React.Component {
 	
-	render: function () {
-		
-		var onFavIconClick = this.props.onFavIconClick;
+	render () {
 		
 		return (
 			<tr>
 				{this.props.items.map(function(item) {
 						return (
-							<BrowseItemCell key={item.id + '|browseItemCell'} item={item} onFavIconClick={onFavIconClick} />
+							<BrowseItemCell key={item.id + '|browseItemCell'} item={item} />
 						);
 					}
 				)}
 			</tr>
 		);
 	}
-});
+}
 
-module.exports = BrowseTableRow;
+export default BrowseTableRow;

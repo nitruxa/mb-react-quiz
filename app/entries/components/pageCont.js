@@ -1,15 +1,15 @@
 import commonStyles from "../css/common.css";
 import React from 'react';
 
-var PageCont = React.createClass({
+class PageCont extends React.Component {
 
-	render: function () {
+	render () {
 		return (
 			<div className={commonStyles.content}>
 				{this.props.children}
 			</div>
 		);
 	}
-});
+}
 
-module.exports = PageCont;
+export default PageCont;

@@ -14,10 +14,7 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchItem: (id) => {
 			dispatch(actions.singleItem.fetch(id));
-		},
-		onFavIconClick: (params) => {
-			dispatch(actions.singleItem.setFavorite(params));
-		},
+		}
 	}
 };
 

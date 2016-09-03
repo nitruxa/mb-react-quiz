@@ -2,9 +2,9 @@ import React from 'react';
 
 import ItemLoadedContainer from '../containers/itemLoadedContainer.js';
 
-var ItemPage = React.createClass({
+class ItemPage extends React.Component {
 	
-	render: function () {
+	render () {
 	
 		return (
 			<div>
@@ -12,6 +12,6 @@ var ItemPage = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = ItemPage;
+export default ItemPage;

@@ -5,11 +5,11 @@ import React from 'react';
 import ItemImage from './itemImage.js';
 import ItemData from './itemData.js';
 import ItemDescr from './itemDescr.js';
-import FavIcon from './favIcon.js';
+import FavIconContainer from '../containers/favIconContainer.js';
 
-var ItemTable = React.createClass({
+class ItemTable extends React.Component {
 	
-	render: function () {
+	render () {
 		
 		var item = this.props.item;
 		
@@ -20,7 +20,7 @@ var ItemTable = React.createClass({
 						<td rowSpan="2" className={itemStyles.imageCell}>
 							<ItemImage key={item.id + '|img'} item={item} />
 							<div className={itemStyles.favIconCont}>
-								<FavIcon fav={item.favorite} onFavIconClick={this.props.onFavIconClick} />
+								<FavIconContainer item={item} itemList={false} />
 							</div>
 						</td>
 						<td className={itemStyles.dataCell}>
@@ -42,6 +42,6 @@ var ItemTable = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
-module.exports = ItemTable;
+export default ItemTable;

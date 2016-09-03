@@ -14,10 +14,7 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		fetchItemList: (limit) => {
 			dispatch(actions.itemList.fetch(limit));
-		},
-		onFavIconClick: (params) => {
-			dispatch(actions.itemList.setFavorite(params));
-		},
+		}
 	}
 };
 
