@@ -4,25 +4,32 @@ import React from 'react';
 
 import LoadButton from './loadButton.js';
 import BrowseTable from './browseTable.js';
-import { ADD_ITEMS } from '../constants';
+import { START_INDEX, ADD_ITEMS } from '../constants';
 
 class BrowseContainer extends React.Component {
 	
 	componentDidMount () {
 		var limit = this.props.items ? this.props.items.length : ADD_ITEMS;
 		
-		this.props.fetchItemList(limit);
+		this.props.fetchItemList({
+			start: START_INDEX,
+			limit: limit,
+			concat: false
+		});
 	}
 	
 	render () {
-		var limit = (this.props.items ? this.props.items.length : 0) + ADD_ITEMS;
 		
 		var browseCont = this.props.items ? (
 			<div>
 				<div className={browseStyles.browseContainer}>
 					<BrowseTable items={this.props.items} />
 				</div>
-				<LoadButton limit={limit} onLoadClick={() => this.props.fetchItemList(limit)} />
+				<LoadButton onLoadClick={() => this.props.fetchItemList({
+					start: this.props.items ? this.props.items.length : START_INDEX,
+					limit: ADD_ITEMS,
+					concat: true
+				})} />
 			</div>
 		) : '';
 		

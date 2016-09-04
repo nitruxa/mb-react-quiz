@@ -12,8 +12,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		fetchItemList: (limit) => {
-			dispatch(actions.itemList.fetch(limit));
+		fetchItemList: (params) => {
+			dispatch(actions.itemList.fetch(params));
 		}
 	}
 };

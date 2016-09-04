@@ -1,7 +1,11 @@
 import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, SET_FAV_ITEMLIST } from '../constants';
 
+function cloneItems (items) {
+	return JSON.parse(JSON.stringify(items));
+};
+
 function setFavInNewState (state, action) {	
-	var items = JSON.parse(JSON.stringify(state.items));
+	var items = cloneItems(state.items);
 	
 	var inx = items.findIndex(function(item) {
 		return item.id === action.id;
@@ -26,7 +30,7 @@ export default function itemList (state = {
 		case RECEIVE_ITEMLIST:
 			return Object.assign({}, state, {
 				isFetching: false,
-				items: action.items
+				items: action.concat ? cloneItems(state.items).concat(action.items) : action.items
 			})
 		case SET_FAV_ITEMLIST:
 			return setFavInNewState(state, action)

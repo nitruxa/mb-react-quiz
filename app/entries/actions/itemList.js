@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST, START_INDEX } from '../constants';
+import { REQUEST_ITEMLIST, RECEIVE_ITEMLIST } from '../constants';
 import favStorage from './favStorage.js';
 
 function requestItemList () {
@@ -8,20 +8,21 @@ function requestItemList () {
 	}
 };
 
-function receiveItemList (items) {
+function receiveItemList (params) {
 	return {
 		type: RECEIVE_ITEMLIST,
-		items: items
+		items: params.items,
+		concat: params.concat
 	}
 };
 
 const itemListActions = {
-	fetch: function (limit) {
+	fetch: function (params) {
 		return function (dispatch) {
 
 		    dispatch(requestItemList());
 		    
-		    fetch('/browse/data?start=' + START_INDEX + '&limit=' + limit)
+		    fetch('/browse/data?start=' + params.start + '&limit=' + params.limit)
 		    .then( (resp) => resp.json() )
 		    .then( (data) => {
 		    	
@@ -33,7 +34,10 @@ const itemListActions = {
 		            item.favorite = inx !== -1 ? true : false;
 		        });
 		    	
-		    	dispatch(receiveItemList(data.items));
+		    	dispatch(receiveItemList({
+		    		items: data.items,
+		    		concat: params.concat
+		    	}));
 		    });
 		}
 	}
