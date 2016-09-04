@@ -40,7 +40,7 @@
 .itemImage {
 	composes: itemBox from './common.css';
 	width: 300px;
-	height: 100%;
+	flex-grow: 1;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -50,7 +50,7 @@
 .itemData {
 	composes: itemBox from './common.css';
 	width: 600px;
-	height: calc(50% - 12px);
+	flex-basis: auto;
 	color: rqGray;
 }
 
@@ -58,6 +58,7 @@
 	composes: itemBox from './common.css';
 	composes: itemData;
 	text-align: justify;
+	flex-grow: 1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -90,7 +91,7 @@
 .purchaseBtn {
 	color: rqGolden;
 	font-size: 14px;
-	width: calc(50% - 1px);
+	flex-grow: 1;
 	height: 40px;
 	border-top: 1px solid rqLightgray;
 	cursor: pointer;

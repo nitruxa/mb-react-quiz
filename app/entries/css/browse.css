@@ -32,8 +32,8 @@
 }
 
 .browseItemImage {
-	width: 100%;
-	padding: 10px;
+	flex-grow: 1;
+	padding-top: 10px;
 }
 
 .browseItemPrice {
