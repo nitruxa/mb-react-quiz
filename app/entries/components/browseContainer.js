@@ -2,8 +2,8 @@ import browseStyles from "../css/browse.css";
 
 import React from 'react';
 
+import BrowseItem from './browseItem.js';
 import LoadButton from './loadButton.js';
-import BrowseTable from './browseTable.js';
 import { START_INDEX, ADD_ITEMS } from '../constants';
 
 class BrowseContainer extends React.Component {
@@ -23,7 +23,11 @@ class BrowseContainer extends React.Component {
 		var browseCont = this.props.items ? (
 			<div>
 				<div className={browseStyles.browseContainer}>
-					<BrowseTable items={this.props.items} />
+					<div className={browseStyles.browseItemContainer}>
+						{this.props.items.map(function(item) {
+							return <BrowseItem key={item.id + '|browseItem'} item={item} />;
+						})}
+					</div>
 				</div>
 				<LoadButton onLoadClick={() => this.props.fetchItemList({
 					start: this.props.items ? this.props.items.length : START_INDEX,
