@@ -6,51 +6,6 @@
 	position: relative;
 }
 
-.itemContainer {
-	composes: content from './common.css';
-}
-
-.itemTable {
-	margin: 0px auto;
-	border-spacing: 10px;
-	height: 350px;
-}
-
-.itemTable td {
-	background-color: rqWhite;
-	border: 1px solid rqLightgray;
-}
-
-.imageCell {
-	width: 300px;
-	height: 100%;
-	position: relative;
-}
-
-.dataCell {
-	width: 600px;
-	height: 50%;
-	color: rqGray;
-	padding: 0px;
-}
-
-.dataTable {
-	width: 100%;
-	height: 100%;
-	border-spacing: 0px;
-}
-
-.dataTable td {
-	border: none;
-	padding: 0px;
-}
-
-.descrCell {
-	composes: dataCell;
-	text-align: justify;
-	padding: 15px;
-}
-
 .leftHeaderLink {
 	position: absolute;
 	left: 20px;
@@ -63,8 +18,52 @@
 	text-decoration: none;
 }
 
-.dataTop {
-	text-align: left;
+.itemOuterContainer {
+	composes: outerContainer from './common.css';
+}
+
+.itemContainer {
+	display: flex;
+	width: 924px;
+	height: 380px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.favIconCont {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.itemImage {
+	composes: itemBox from './common.css';
+	width: 300px;
+	height: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.itemData {
+	composes: itemBox from './common.css';
+	width: 600px;
+	height: calc(50% - 12px);
+	color: rqGray;
+}
+
+.itemDescr {
+	composes: itemBox from './common.css';
+	composes: itemData;
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.textWrapper {
 	padding: 15px;
 }
 
@@ -77,13 +76,23 @@
 	color: black;
 }
 
+.dataContainer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dataTop {
+	width: 100%;
+	text-align: left;
+	padding: 15px;
+}
+
 .purchaseBtn {
 	color: rqGolden;
 	font-size: 14px;
-	border: 1px solid rqLightgray;
-	border-bottom: none;
-	width: 100%;
+	width: calc(50% - 1px);
 	height: 40px;
+	border-top: 1px solid rqLightgray;
 	cursor: pointer;
 	display: flex;
 	flex-direction: column;
@@ -91,8 +100,7 @@
 	align-items: center;
 }
 
-.favIconCont {
-	position: absolute;
-	top: 10px;
-	right: 10px;
+.offerBtn {
+	composes: purchaseBtn;
+	border-left: 1px solid rqLightgray;
 }

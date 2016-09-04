@@ -13,6 +13,19 @@
 	text-align: center;
 }
 
+.outerContainer {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	padding: 8px;
+}
+
+.itemBox {
+	border: 1px solid rqLightgray;
+	background-color: rqWhite;
+	margin: 5px;
+}
+
 .header {
 	background-color: rqWhite;
 	padding: 10px;

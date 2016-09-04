@@ -22,8 +22,8 @@ class BrowseContainer extends React.Component {
 		
 		var browseCont = this.props.items ? (
 			<div>
-				<div className={browseStyles.browseContainer}>
-					<div className={browseStyles.browseItemContainer}>
+				<div className={browseStyles.browseOuterContainer}>
+					<div className={browseStyles.browseContainer}>
 						{this.props.items.map(function(item) {
 							return <BrowseItem key={item.id + '|browseItem'} item={item} />;
 						})}

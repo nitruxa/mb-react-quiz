@@ -11,7 +11,7 @@ class ItemDescr extends React.Component {
 	render () {
 		
 		return (
-			<div>
+			<div className={itemStyles.textWrapper}>
 				{this.props.item.description}
 				<div style={{marginTop: 20}}><span className={itemStyles.header3}>Creator: </span>{this.props.item.creators}</div>
 			</div>
