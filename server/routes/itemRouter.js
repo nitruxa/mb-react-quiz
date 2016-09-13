@@ -10,8 +10,8 @@ const getItem = function (itemId) {
 };
 
 itemRouter.get('/:id', (req, res) => {
-    //const id = req.params.id;
-    //const item = getItem(id);
+    // const id = req.params.id;
+    // const item = getItem(id);
     res.render('app', {/*item*/});
 });
 

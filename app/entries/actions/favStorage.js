@@ -9,11 +9,11 @@ const favStorage = {
 		}
 		return available;
 	},
-	
+
 	setFavItem: function (params) {
 		if (this.storageAvailable()) {
 			var favItems = this.getFavItems();
-			
+
 			if (params.favorite) {
 				favItems.push(params.id);
 			}
@@ -25,11 +25,11 @@ const favStorage = {
 					favItems.splice(inx, 1);
 				}
 			}
-			
+
 			localStorage.setItem(FAV_STORAGE_NAME, JSON.stringify(favItems));
 		}
 	},
-	
+
 	getFavItems: function () {
 		var favItems = [];
 		if (this.storageAvailable()) {
@@ -38,7 +38,7 @@ const favStorage = {
 		}
 		return favItems;
 	}
-	
+
 };
 
 export default favStorage;
